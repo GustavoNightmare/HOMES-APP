@@ -1,0 +1,17 @@
+
+
+img{
+    width: 2rem
+}
+header{
+    color:#605DC8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    align-items: center;
+    display: flex;
+}
+.content {
+  background-color: #eeeeee;
+  min-height: calc(100vh - 80px);
+  padding: 20px;
+}
