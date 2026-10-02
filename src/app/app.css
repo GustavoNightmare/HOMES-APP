@@ -1,17 +1,29 @@
 
 
-img{
-    width: 2rem
+.brand-name {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding: 10px 20px;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
 }
-header{
-    color:#605DC8;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    align-items: center;
-    display: flex;
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  margin-right: 4px;
 }
+
 .content {
-  background-color: #eeeeee;
   min-height: calc(100vh - 80px);
-  padding: 20px;
+  padding: 30px 50px;
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 20px;
+  }
 }

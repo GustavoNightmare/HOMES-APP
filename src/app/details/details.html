@@ -1,0 +1,20 @@
+<article>
+      <img
+        class="listing-photo"
+        [src]="InformacionCasa?.photo"
+        alt="Exterior photo of {{ InformacionCasa?.name }}"
+        crossorigin
+      />
+      <section class="listing-description">
+        <h2 class="listing-heading">{{ InformacionCasa?.name }}</h2>
+        <p class="listing-location">{{ InformacionCasa?.city }}, {{ InformacionCasa?.state }}</p>
+      </section>
+      <section class="listing-features">
+        <h2 class="section-heading">About this housing location</h2>
+        <ul>
+          <li>Units available: {{ InformacionCasa?.availableUnits }}</li>
+          <li>Does this location have wifi: {{ InformacionCasa?.wifi }}</li>
+          <li>Does this location have laundry: {{ InformacionCasa?.laundry }}</li>
+        </ul>
+      </section>
+    </article>

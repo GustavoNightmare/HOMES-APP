@@ -1,23 +1,38 @@
 
-.primary {
-  padding: 2rem 2rem 2rem 2rem
-  border: #605DC8 solid 1px;
-  background: #605DC8 ;
-  color: rgb(249, 250, 251);
+input {
+  width: min(100%, 500px);
+  padding: 10px;
+  border: 1px solid var(--primary-color);
   border-radius: 8px;
 }
-.btn-primary{
-    border: #605DC8 solid 1px;
-    background: #ffffff ;
-    color: rgb(249, 250, 251);
-    border-radius: 8px;
 
+.primary {
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
-main{
- background-color: gray;
 
-}
 form {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  gap: 50px;
+  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+  .results {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 30px;
+  }
 }
