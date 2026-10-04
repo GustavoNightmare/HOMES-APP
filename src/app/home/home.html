@@ -1,11 +1,16 @@
 <section>
-      <form>
-        <input class ="btn-primary" type="text" placeholder="Filter by city" />
-        <button class="primary" type="button">Search</button>
-      </form>
+  <input
+    type="search"
+    placeholder="Filter by city"
+    aria-label="Filter housing locations by city"
+    #filter
+    (input)="filterResults(filter.value)"
+  />
 </section>
 <section class="results">
-   @for (housingLocation of housingLocationList; track $index) {
-        <app-housing-location [housingLocation]="housingLocation" />
-      }
+  @for (housingLocation of filteredLocationList; track housingLocation.id) {
+    <app-housing-location [housingLocation]="housingLocation" />
+  } @empty {
+    <p>No housing locations found for that city.</p>
+  }
 </section>
