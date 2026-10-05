@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Housing } from '../housing';
 import { HousingLocationInfo } from '../interfaces/housinglocation';
@@ -14,6 +14,7 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 export class Details {
     private readonly route = inject(ActivatedRoute);
   private readonly housing = inject(Housing);
+    private readonly changeDetectorRef = inject(ChangeDetectorRef);
   housingLocationId = -1;
   InformacionCasa : HousingLocationInfo  | undefined ;
   applyForm = new FormGroup({
@@ -21,10 +22,12 @@ export class Details {
     lastName: new FormControl(''),
     email: new FormControl(''),
   });
-  constructor() {
-    this.housingLocationId =
-      Number(this.route.snapshot.params['id']);
-    this.InformacionCasa = this.housing.getHousingLocationById(this.housingLocationId)
+constructor() {
+    const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
+    this.housing.getHousingLocationById(housingLocationId).then((housingLocation) => {
+      this.InformacionCasa = housingLocation;
+      this.changeDetectorRef.markForCheck();
+    });
   }
   submitApplication() {
     this.housing.submitApplication(
