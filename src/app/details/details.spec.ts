@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 import { Details } from './details';
+import { Housing } from '../housing';
 
 describe('Details', () => {
   let component: Details;
@@ -8,6 +10,19 @@ describe('Details', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Details],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: { snapshot: { params: { id: '1' } } },
+        },
+        {
+          provide: Housing,
+          useValue: {
+            getHousingLocationById: () => Promise.resolve(undefined),
+            submitApplication: () => undefined,
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Details);

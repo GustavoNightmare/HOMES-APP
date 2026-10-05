@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Home } from './home';
+import { Housing } from '../housing';
 
 describe('Home', () => {
   let component: Home;
@@ -8,6 +9,12 @@ describe('Home', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Home],
+      providers: [
+        {
+          provide: Housing,
+          useValue: { getAllHousingLocations: () => Promise.resolve([]) },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Home);
