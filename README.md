@@ -1,59 +1,100 @@
-# MiProyecto
+# Mi primera aplicacion Angular: Homes
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.6.
+> **Estudiante:** Javier Alexander Hurtado Guaca<br>
+> **Tutorial:** [Your first Angular app](https://angular.dev/tutorials/first-app)<br>
+> **Estado:** Completado
 
-## Development server
+Aplicacion web desarrollada con Angular para consultar viviendas disponibles, filtrarlas por ciudad y revisar el detalle de cada ubicacion.
 
-To start a local development server, run:
+## Resultado final
+
+La aplicacion cuenta con:
+
+- Listado dinamico de viviendas.
+- Filtro por ciudad.
+- Vista de detalle para cada vivienda.
+- Formulario de solicitud.
+- Consumo de datos desde una API local simulada con `db.json`.
+
+---
+
+## Bitacora de desarrollo
+
+### 1. Proyecto base
+
+**Fecha:** 24 de septiembre de 2026<br>
+**Commit:** [`76fecb9`](https://github.com/GustavoNightmare/HOMES-APP/commit/76fecb9)
+
+Se genero el proyecto Angular con Angular CLI. En esta etapa se verifico que el servidor de desarrollo y la plantilla inicial funcionaran correctamente.
+
+![Pantalla inicial de Angular](docs/capturas/avance-01-2026-09-24.png)
+
+### 2. Inicio de Homes
+
+**Fecha:** 25 de septiembre de 2026<br>
+**Commit:** [`bb1db37`](https://github.com/GustavoNightmare/HOMES-APP/commit/bb1db37)
+
+Se creo el componente `home`, se reemplazo la pantalla inicial por la cabecera de Homes y se agrego el formulario de busqueda por ciudad junto con el logotipo de la aplicacion.
+
+![Interfaz inicial de Homes](docs/capturas/avance-02-2026-09-25.png)
+
+### 3. Listado y detalle de viviendas
+
+**Fecha:** 01 de octubre de 2026<br>
+**Commit:** [`d85e98a`](https://github.com/GustavoNightmare/HOMES-APP/commit/d85e98a)
+
+Se implementaron la interfaz de datos, el servicio `Housing`, las tarjetas de vivienda, la navegacion mediante rutas y el componente de detalle.
+
+![Listado de viviendas](docs/capturas/avance-03-2026-10-01.png)
+
+### 4. Filtro y formulario de solicitud
+
+**Fecha:** 04 de octubre de 2026<br>
+**Commit:** [`20620d1`](https://github.com/GustavoNightmare/HOMES-APP/commit/20620d1)
+
+Se agrego el filtro en tiempo real por ciudad, el mensaje para resultados vacios y un formulario reactivo para solicitar una vivienda desde su vista de detalle.
+
+![Filtro de viviendas](docs/capturas/avance-04-2026-10-04.png)
+
+### 5. Datos desde API local simulada
+
+**Fecha:** 04 de octubre de 2026<br>
+**Commit:** [`7126fde`](https://github.com/GustavoNightmare/HOMES-APP/commit/7126fde)
+
+Se traslado el listado de viviendas desde un arreglo interno hacia `db.json`. El servicio ahora consulta los datos mediante `fetch` a una API local simulada.
+
+![Version final conectada a datos](docs/capturas/avance-05-2026-10-04.png)
+
+---
+
+## Tecnologias
+
+- Angular 22
+- TypeScript
+- HTML y CSS
+- JSON Server para datos locales simulados
+
+## Ejecutar el proyecto
 
 ```bash
-ng serve
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abre `http://localhost:4200/` en el navegador.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Para compilar el proyecto:
 
 ```bash
-ng generate component component-name
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para ejecutar las pruebas:
 
 ```bash
-ng generate --help
+npm test -- --watch=false
 ```
 
-## Building
+## Evidencias completas
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+La bitacora detallada, con todos los cambios por avance, esta disponible en [docs/bitacora.md](docs/bitacora.md).
